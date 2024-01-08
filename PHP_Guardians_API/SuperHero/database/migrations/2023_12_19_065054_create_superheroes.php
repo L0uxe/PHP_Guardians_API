@@ -18,12 +18,24 @@ return new class extends Migration
             $table->string('sexe');
             $table->string('couleur_cheveux');
             $table->unsignedBigInteger('planete_origine_id')->nullable();
-            $table->foreign('planete_origine_id')->references('id')->on('planets');
+            //$table->foreign('planete_origine_id')->references('id')->on('planets');
             $table->text('description')->nullable();
             $table->unsignedBigInteger('vehicule_id')->nullable();
-            $table->foreign('vehicule_id')->references('id')->on('vehicles');
+            //$table->foreign('vehicule_id')->references('id')->on('vehicles');
             $table->timestamps();
         });
+
+        DB::table ('superheroes')->insert([
+            'nom' => 'Superman',
+            'identite_secrete' => 'Clark Kent',
+            'sexe' => 'Homme',
+            'couleur_cheveux' => 'Noir',
+            'description' => 'Superman est un super-héros de bande dessinée américaine appartenant au monde imaginaire de l\'Univers DC. Ce personnage est considéré comme une icône culturelle américaine.',
+        ]);
+
+
+
+
     }
 
     /**
